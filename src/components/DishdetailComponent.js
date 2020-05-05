@@ -14,7 +14,7 @@ class DishDetail extends Component {
   }
 
   componentDidUpdate() {
-  console.log("Dishdetail Component componentDidUpdate invoked"); 
+    console.log("Dishdetail Component componentDidUpdate invoked");
   }
 
   renderDish(dish) {
@@ -59,8 +59,6 @@ class DishDetail extends Component {
   }
 
   render() {
-    console.log("Dishdetail Component render invoked");
-    
     if (this.props.dish != null)
       return (
         <div className="container">

@@ -9,15 +9,6 @@ import {
 } from "reactstrap";
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
-    console.log('Menu Component constructor invoked');
-  }
-
-  componentDidMount() {
-    console.log('Menu Component componentDidMount invoked');
-  }
-
   // renderDish(dish) {
   //     if (dish != null)
   //         return(
