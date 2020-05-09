@@ -33,13 +33,13 @@ class Header extends Component {
               <NavbarBrand className="mr-auto" href="/">
                 <img
                   src="assets/images/logo.png"
-                  height="30"
-                  width="41"
+                  height="45"
+                  width="45"
                   alt="Ristorante Con Fusion"
                 />
               </NavbarBrand>
               <Collapse isOpen={this.state.isNavOpen} navbar>
-                <Nav navbar>
+                <Nav className="ml-auto" navbar>
                   <NavItem>
                     <NavLink className="nav-link" to="/home">
                       <span className="fa fa-home fa-lg"></span> Home

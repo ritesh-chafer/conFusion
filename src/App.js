@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Navbar, NavbarBrand } from "reactstrap";
-import Main from "./components/MainComponents";
+import Main from "./components/MainComponent";
 import "./App.css";
 
 import { render } from "@testing-library/react";

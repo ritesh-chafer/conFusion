@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import { Link } from "react-router-dom";
 import {
   Card,
   CardImg,
@@ -7,16 +9,9 @@ import {
   CardBody,
   CardTitle,
 } from "reactstrap";
+import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 
 class DishDetail extends Component {
-  componentDidMount() {
-    console.log("Dishdetail Component componentDidMount invoked");
-  }
-
-  componentDidUpdate() {
-    console.log("Dishdetail Component componentDidUpdate invoked");
-  }
-
   renderDish(dish) {
     return (
       <div className="col-12 col-md-5 m-1">
@@ -63,8 +58,20 @@ class DishDetail extends Component {
       return (
         <div className="container">
           <div className="row">
+            <Breadcrumb>
+              <BreadcrumbItem>
+                <Link to="/menu">Menu</Link>
+              </BreadcrumbItem>
+              <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
+            </Breadcrumb>
+            <div className="col-12">
+              <h3>{this.props.dish.name}</h3>
+              <hr />
+            </div>
+          </div>
+          <div className="row">
             {this.renderDish(this.props.dish)}
-            {this.renderComments(this.props.dish.comments)}
+            {this.renderComments(this.props.comments)}
           </div>
         </div>
       );
