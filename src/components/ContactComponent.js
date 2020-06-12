@@ -9,17 +9,14 @@ import {
   Input,
   Col,
   Row,
-  FormFeedback
+  FormFeedback,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
 class Contact extends Component {
-
   constructor(props) {
-
     super(props);
     this.state = {
-
       firstname: "",
       lastname: "",
       telnum: "",
@@ -28,26 +25,24 @@ class Contact extends Component {
       contactType: "Tel.",
       message: "",
       touched: {
-        firstname:false,
-        lastname:false,
-        telnum:false,
-        email: false
-        
-      }
+        firstname: false,
+        lastname: false,
+        telnum: false,
+        email: false,
+      },
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
   handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
-      [name]: value
-    })
+      [name]: value,
+    });
   }
 
   handleSubmit(event) {
@@ -58,12 +53,12 @@ class Contact extends Component {
 
   handleBlur = (field) => (evt) => {
     this.setState({
-      touched: { ...this.state.touched, [field]: true }
+      touched: { ...this.state.touched, [field]: true },
     });
-  }
+  };
 
   validate(firstname, lastname, telnum, email) {
-    const error = {
+    const errors = {
       firstname: false,
       lastname: false,
       telnum: false,
@@ -71,28 +66,35 @@ class Contact extends Component {
     };
 
     if (this.state.touched.firstname && firstname.length < 3)
-      errors.Lastname = 'First Name should be >= 3 character';
+      errors.Lastname = "First Name should be >= 3 character";
     else if (this.state.touched.firstname && firstname.length > 10)
       errors.Lastname = "First Name should be <= 3 character";
-    
+
     if (this.state.touched.lastname && lastname.length < 3)
       errors.lastname = "Last Name should be >= 3 character";
     else if (this.state.touched.lastname && lastname.length > 10)
       errors.lastname = "Last Name should be <= 3 character";
-    
+
     const reg = /^\d+$/;
     if (this.state.touched.telnum && !reg.test(telnum))
       errors.telnum = "Tel. Number should contain only numbers";
-    
-    if (this.state.touched.email && email.split('').filter(x => x==='@').length !==1)
-      errors.email = "Email should contain a @";
-    
-    return errors;
 
+    if (
+      this.state.touched.email &&
+      email.split("").filter((x) => x === "@").length !== 1
+    )
+      errors.email = "Email should contain a @";
+
+    return errors;
   }
 
   render() {
-    const errors = this.validate(this.state.firstname, this.state.lastname, this.state.telnum, this.state.email);
+    const errors = this.validate(
+      this.state.firstname,
+      this.state.lastname,
+      this.state.telnum,
+      this.state.email
+    );
     return (
       <div className="container">
         <div className="row">
@@ -148,7 +150,6 @@ class Contact extends Component {
           </div>
         </div>
 
-        
         <div className="row row-content">
           <div className="col-12">
             <h3>Send us your Feedback</h3>
@@ -166,8 +167,10 @@ class Contact extends Component {
                     name="firstname"
                     placeholder="First Name"
                     value={this.state.firstname}
+                    onBlur={this.handleBlur("firstname")}
                     onChange={this.handleInputChange}
                   />
+                  <FormFeedback>{errors.firstname}</FormFeedback>
                 </Col>
               </FormGroup>
               <FormGroup row>
@@ -181,8 +184,10 @@ class Contact extends Component {
                     name="lastname"
                     placeholder="Last Name"
                     value={this.state.lastname}
+                    onBlur={this.handleBlur("lastname")}
                     onChange={this.handleInputChange}
                   />
+                  <FormFeedback>{errors.lastname}</FormFeedback>
                 </Col>
               </FormGroup>
               <FormGroup row>
@@ -196,8 +201,10 @@ class Contact extends Component {
                     name="telnum"
                     placeholder="Tel. number"
                     value={this.state.telnum}
+                    onBlur={this.handleBlur("telnum")}
                     onChange={this.handleInputChange}
                   />
+                  <FormFeedback>{erros.telnum}</FormFeedback>
                 </Col>
               </FormGroup>
               <FormGroup row>
@@ -211,8 +218,10 @@ class Contact extends Component {
                     name="email"
                     placeholder="Email"
                     value={this.state.email}
+                    onBlur={this.handleBlur("email")}
                     onChange={this.handleInputChange}
                   />
+                  <FormFeedback>{erros.email}</FormFeedback>
                 </Col>
               </FormGroup>
               <FormGroup row>
@@ -223,6 +232,7 @@ class Contact extends Component {
                         type="checkbox"
                         name="agree"
                         checked={this.state.agree}
+                        onBlur={this.handleBlur("")}
                         onChange={this.handleInputChange}
                       />{" "}
                       <strong>May we contact you?</strong>
