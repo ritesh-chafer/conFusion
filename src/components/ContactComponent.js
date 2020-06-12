@@ -34,6 +34,7 @@ class Contact extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
   handleInputChange(event) {
     const target = event.target;
@@ -167,6 +168,8 @@ class Contact extends Component {
                     name="firstname"
                     placeholder="First Name"
                     value={this.state.firstname}
+                    valid={errors.firstname === ""}
+                    invalid={errors.firstname !== ""}
                     onBlur={this.handleBlur("firstname")}
                     onChange={this.handleInputChange}
                   />
@@ -184,6 +187,8 @@ class Contact extends Component {
                     name="lastname"
                     placeholder="Last Name"
                     value={this.state.lastname}
+                    valid={errors.lastname === ""}
+                    invalid={errors.lastname !== ""}
                     onBlur={this.handleBlur("lastname")}
                     onChange={this.handleInputChange}
                   />
@@ -201,10 +206,12 @@ class Contact extends Component {
                     name="telnum"
                     placeholder="Tel. number"
                     value={this.state.telnum}
+                    valid={errors.telnum === ""}
+                    invalid={errors.telnum !== ""}
                     onBlur={this.handleBlur("telnum")}
                     onChange={this.handleInputChange}
                   />
-                  <FormFeedback>{erros.telnum}</FormFeedback>
+                  <FormFeedback>{errors.telnum}</FormFeedback>
                 </Col>
               </FormGroup>
               <FormGroup row>
@@ -218,10 +225,12 @@ class Contact extends Component {
                     name="email"
                     placeholder="Email"
                     value={this.state.email}
+                    valid={errors.email === ""}
+                    invalid={errors.email !== ""}
                     onBlur={this.handleBlur("email")}
                     onChange={this.handleInputChange}
                   />
-                  <FormFeedback>{erros.email}</FormFeedback>
+                  <FormFeedback>{errors.email}</FormFeedback>
                 </Col>
               </FormGroup>
               <FormGroup row>
@@ -232,7 +241,6 @@ class Contact extends Component {
                         type="checkbox"
                         name="agree"
                         checked={this.state.agree}
-                        onBlur={this.handleBlur("")}
                         onChange={this.handleInputChange}
                       />{" "}
                       <strong>May we contact you?</strong>
