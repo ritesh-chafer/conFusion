@@ -20,6 +20,9 @@ class Header extends Component {
       isModalOpen: false
     };
     this.toggleNav = this.toggleNav.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+    this.handlelogin = this.handlelogin.bind(this);
+
   
   }
   toggleNav() {
