@@ -30,6 +30,18 @@ class Header extends Component {
       isNavOpen: !this.state.isNavOpen
     });
   }
+  toggleModal(){
+    this.setState({
+      isModalOpen: !this.state.isModalOpen
+    });
+  }
+  handlelogin(event){
+    this.toggleModal();
+      alert("Username: " + this.username.value + "Password: " + this.password.value + "Remember: " + this.remember.checked);
+      event.preventDefault();
+    
+  }
+  
   
   render() {
     return (
