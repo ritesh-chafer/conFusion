@@ -12,12 +12,13 @@ const store = ConfugureStore();
 class App extends Component {
   render() {
     return (
-      <Provider></Provider>
-      <BrowserRouter>
-        <div>
-          <Main />
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            <Main />
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
