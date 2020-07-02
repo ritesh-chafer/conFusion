@@ -5,7 +5,6 @@ import { PROMOTIONS } from "../shared/promotion";
 
 export const initialState = {
     dishes: DISHES,
-    
     comments: COMMENTS,
     promotions: PROMOTIONS,
     leaders: LEADERS,
