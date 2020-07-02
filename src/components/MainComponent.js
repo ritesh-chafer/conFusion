@@ -6,22 +6,13 @@ import Menu from "./MenuComponent";
 import Contact from "./ContactComponent";
 import Dishdetail from "./DishdetailComponent";
 import About from "./AboutComponent";
-import { DISHES } from "../shared/dish";
-import { COMMENTS } from "../shared/comment";
-import { LEADERS } from "../shared/leader";
-import { PROMOTIONS } from "../shared/promotion";
+
 import { Switch, Route, Redirect } from "react-router-dom";
 
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      dishes: DISHES,
-      selectedDish: null,
-      comments: COMMENTS,
-      promotions: PROMOTIONS,
-      leaders: LEADERS,
-    };
+   
   }
   onDishSelect(dishId) {
     this.setState({ selectedDish: dishId });
