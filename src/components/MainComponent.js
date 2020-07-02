@@ -7,15 +7,22 @@ import Contact from "./ContactComponent";
 import Dishdetail from "./DishdetailComponent";
 import About from "./AboutComponent";
 
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+
+const mapStateToProps = state  => {
+    return{
+      dishes: state.dishes,
+      comments: state.comments,
+      promotions: state.promotions,
+      leaders: state.leaders
+    }
+}
 
 class Main extends Component {
   constructor(props) {
     super(props);
    
-  }
-  onDishSelect(dishId) {
-    this.setState({ selectedDish: dishId });
   }
 
   render() {
@@ -68,5 +75,5 @@ class Main extends Component {
     );
   }
 }
-export default Main;
+export default (connect(mapStateToProps)(Main));
 
