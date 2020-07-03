@@ -121,7 +121,7 @@ class Contact extends Component {
                     onBlur={this.handleBlur("firstname")}
                     onChange={this.handleInputChange}
                   />
-                  <FormFeedback>{errors.firstname}</FormFeedback>
+                  
                 </Col>
               </Row>
               <Row className="form-group">
@@ -140,7 +140,7 @@ class Contact extends Component {
                     onBlur={this.handleBlur("lastname")}
                     onChange={this.handleInputChange}
                   />
-                  <FormFeedback>{errors.lastname}</FormFeedback>
+                  
                 </Col>
               </Row>
               <Row className="form-group">
@@ -159,7 +159,7 @@ class Contact extends Component {
                     onBlur={this.handleBlur("telnum")}
                     onChange={this.handleInputChange}
                   />
-                  <FormFeedback>{errors.telnum}</FormFeedback>
+                  
                 </Col>
               </Row>
               <Row className="form-group">
@@ -178,7 +178,7 @@ class Contact extends Component {
                     onBlur={this.handleBlur("email")}
                     onChange={this.handleInputChange}
                   />
-                  <FormFeedback>{errors.email}</FormFeedback>
+                  
                 </Col>
               </Row>
               <Row className="form-group">
