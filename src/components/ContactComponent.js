@@ -23,19 +23,10 @@ class Contact extends Component {
   }
   
 
-  handleSubmit(event) {
-    console.log("Current state is: " + JSON.stringify(this.state));
-    alert("Current State is: " + JSON.stringify(this.state));
-    event.preventDefault();
+  handleSubmit(values) {
+    console.log("Current state is: " + JSON.stringify(values));
+    alert("Current State is: " + JSON.stringify(values));
   }
-
-  handleBlur = (field) => (evt) => {
-    this.setState({
-      touched: { ...this.state.touched, [field]: true },
-    });
-  };
-
-
 
   render() {
     const errors = this.validate(
