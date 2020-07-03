@@ -9,42 +9,19 @@ import {
   Input,
   Col,
   Row,
-  FormFeedback,
 } from "reactstrap";
+import { Control, LocalForm, Errors} from "react-redux-form"
 import { Link } from "react-router-dom";
 
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      firstname: "",
-      lastname: "",
-      telnum: "",
-      email: "",
-      agree: false,
-      contactType: "Tel.",
-      message: "",
-      touched: {
-        firstname: false,
-        lastname: false,
-        telnum: false,
-        email: false,
-      },
-    };
+    
 
-    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
+    
   }
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value,
-    });
-  }
+  
 
   handleSubmit(event) {
     console.log("Current state is: " + JSON.stringify(this.state));
@@ -58,36 +35,7 @@ class Contact extends Component {
     });
   };
 
-  validate(firstname, lastname, telnum, email) {
-    const errors = {
-      firstname: false,
-      lastname: false,
-      telnum: false,
-      email: false,
-    };
 
-    if (this.state.touched.firstname && firstname.length < 3)
-      errors.Lastname = "First Name should be >= 3 character";
-    else if (this.state.touched.firstname && firstname.length > 10)
-      errors.Lastname = "First Name should be <= 3 character";
-
-    if (this.state.touched.lastname && lastname.length < 3)
-      errors.lastname = "Last Name should be >= 3 character";
-    else if (this.state.touched.lastname && lastname.length > 10)
-      errors.lastname = "Last Name should be <= 3 character";
-
-    const reg = /^\d+$/;
-    if (this.state.touched.telnum && !reg.test(telnum))
-      errors.telnum = "Tel. Number should contain only numbers";
-
-    if (
-      this.state.touched.email &&
-      email.split("").filter((x) => x === "@").length !== 1
-    )
-      errors.email = "Email should contain a @";
-
-    return errors;
-  }
 
   render() {
     const errors = this.validate(
@@ -156,8 +104,8 @@ class Contact extends Component {
             <h3>Send us your Feedback</h3>
           </div>
           <div className="col-12 col-md-9">
-            <Form onSubmit={this.handleSubmit}>
-              <FormGroup row>
+            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+              <Row>
                 <Label htmlFor="firstname" md={2}>
                   First Name
                 </Label>
@@ -281,7 +229,7 @@ class Contact extends Component {
                   </Button>
                 </Col>
               </FormGroup>
-            </Form>
+            </LocalForm>
           </div>
         </div>
       </div>
