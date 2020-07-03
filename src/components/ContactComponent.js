@@ -196,14 +196,12 @@ class Contact extends Component {
                   Your Feedback
                 </Label>
                 <Col md={10}>
-                  <Input
-                    type="textarea"
+                  <Control.textarea
+                    model=".message"
                     id="message"
                     name="message"
                     rows="12"
-                    value={this.state.message}
-                    onChange={this.handleInputChange}
-                  ></Input>
+                    className="form-control" />
                 </Col>
               </Row>
               <Row className="form-group">
