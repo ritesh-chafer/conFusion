@@ -16,13 +16,8 @@ import { Link } from "react-router-dom";
 class Contact extends Component {
   constructor(props) {
     super(props);
-    
-
     this.handleSubmit = this.handleSubmit.bind(this);
-    
   }
-  
-
   handleSubmit(values) {
     console.log("Current state is: " + JSON.stringify(values));
     alert("Current State is: " + JSON.stringify(values));
