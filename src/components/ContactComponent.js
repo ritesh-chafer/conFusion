@@ -112,7 +112,7 @@ class Contact extends Component {
                     messages={{
                       required: 'Reuired',
                       minLength: 'Must be greater than 2 characters',
-                      maxLength: 'Must be 15 character'
+                      maxLength: 'Must be 15 characters or less'
                     }}
                  /> 
                 </Col>
