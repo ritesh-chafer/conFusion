@@ -103,7 +103,9 @@ class Contact extends Component {
                     name="firstname"
                     placeholder="First Name"
                     className="form-control"
-                    validators={{required,minLength: minLength(3), maxLength : maxLength(15)}}
+                    validators={{
+                      required,minLength: minLength(3), maxLength : maxLength(15)
+                    }}
                   />
                  <Errors 
                     className="text-danger"
@@ -128,8 +130,20 @@ class Contact extends Component {
                     name="lastname"
                     className="form-control"
                     placeholder="Last Name"
-                    
+                    validators={{
+                      required,minLength: minLength(3), maxLength : maxLength(15)
+                    }}
                   />
+                  <Errors 
+                    className="text-danger"
+                    model=".lastname"
+                    show="touched"
+                    messages={{
+                      required: 'Reuired',
+                      minLength: 'Must be greater than 2 characters',
+                      maxLength: 'Must be 15 characters or less'
+                    }}
+                 /> 
                   
                 </Col>
               </Row>
