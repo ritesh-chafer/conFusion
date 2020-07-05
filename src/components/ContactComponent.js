@@ -187,7 +187,19 @@ class Contact extends Component {
                     name="email"
                     placeholder="Email"
                     className="form-control"
+                    validators={{
+                      required, validEmail
+                    }}
                   />
+                  <Errors 
+                    className="text-danger"
+                    model=".email"
+                    show="touched"
+                    messages={{
+                      required: 'Reuired',
+                      validEmail: 'Invalid Email Address'
+                    }}
+                 />
                   
                 </Col>
               </Row>
