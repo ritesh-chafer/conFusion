@@ -158,8 +158,21 @@ class Contact extends Component {
                     name="telnum"
                     className="form-control"
                     placeholder="Tel. number"
-                    
+                    validators={{
+                      required,minLength: minLength(3), maxLength : maxLength(15), isNumber
+                    }}
                   />
+                  <Errors 
+                    className="text-danger"
+                    model=".telnum"
+                    show="touched"
+                    messages={{
+                      required: 'Reuired',
+                      minLength: 'Must be greater than 2 numbers',
+                      maxLength: 'Must be 15 nimbers or less',
+                      isNumber : 'Must be Numbers'
+                    }}
+                 />
                   
                 </Col>
               </Row>
