@@ -114,3 +114,6 @@ export class CommentForm extends Component {
     console.log("comment:", values);
     alert("comment:" + JSON.stringify(values));
   }
+
+  render() {
+    return (
