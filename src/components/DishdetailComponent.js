@@ -121,3 +121,4 @@ export class CommentForm extends Component {
         <Button outline onClick={this.toggleModal}>
           <span className="fa fa-pencil fa-lg"> Submit comment</span>
         </Button>
+      <div className="row row-content">        
