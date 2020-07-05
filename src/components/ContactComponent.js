@@ -19,7 +19,6 @@ const minLength = (len) => (val) => !(val) && (val.length >= len)
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
 
-
 class Contact extends Component {
 
   constructor(props) {
@@ -102,10 +101,20 @@ class Contact extends Component {
                     model=".firstname"
                     id="firstname"
                     name="firstname"
-                    className="form-control"
                     placeholder="First Name"
+                    className="form-control"
+                    validators={{required,minLength: minLength(3), maxLength : maxLength(15)}}
                   />
-                  
+                 <Errors 
+                    className="text-danger"
+                    model=".firstname"
+                    show="touched"
+                    messages={{
+                      required: 'Reuired',
+                      minLength: 'Must be greater than 2 characters',
+                      maxLength: 'Must be 15 character'
+                    }}
+                 /> 
                 </Col>
               </Row>
               <Row className="form-group">
