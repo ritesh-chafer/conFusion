@@ -196,7 +196,7 @@ class Contact extends Component {
                     model=".email"
                     show="touched"
                     messages={{
-                      required: 'Required ',
+                      required: '*Required ',
                       validEmail: 'Invalid Email Address'
                     }}
                  />
