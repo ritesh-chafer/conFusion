@@ -121,4 +121,25 @@ export class CommentForm extends Component {
         <Button outline onClick={this.toggleModal}>
           <span className="fa fa-pencil fa-lg"> Submit comment</span>
         </Button>
-      <div className="row row-content">        
+      <div className="row row-content">   
+      <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+            <ModalHeader toggle={this.toggleModal}> Submit comment</ModalHeader>
+            <ModalBody>
+              <div className="col-12 col-md-9">
+                <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+                  <Row className="form-group">
+                    <Label htmlFor="rating" md={12}>Rating</Label>
+                    <Col md={12}>
+                      <Control.select
+                        model=".rating"
+                        name="rating"
+                        className="form-control"
+                      >
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </Control.select>
+                    </Col>
+                  </Row>     
