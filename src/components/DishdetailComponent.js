@@ -195,3 +195,16 @@ export class CommentForm extends Component {
                       />
                     </Col>
                   </Row>
+
+                  <Button type="submit" value="submit" color="primary">
+                    Submit
+                  </Button>
+                </LocalForm>
+              </div>
+            </ModalBody>
+          </Modal>
+        </div>
+      </div>
+    );
+  }
+}
