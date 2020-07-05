@@ -103,3 +103,14 @@ export class CommentForm extends Component {
     this.toggleModal = this.toggleModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  toggleModal() {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
+  }
+
+  handleSubmit(values) {
+    this.toggleModal();
+
+    console.log("comment:", values);
+    alert("comment:" + JSON.stringify(values));
+  }
