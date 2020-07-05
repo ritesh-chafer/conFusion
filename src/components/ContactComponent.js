@@ -167,9 +167,9 @@ class Contact extends Component {
                     model=".telnum"
                     show="touched"
                     messages={{
-                      required: 'Required ',
+                      required: '*Required ',
                       minLength: 'Must be greater than 2 numbers',
-                      maxLength: 'Must be 15 nimbers or less',
+                      maxLength: 'Must be 15 numbers or less',
                       isNumber : 'Must be Numbers'
                     }}
                  />
