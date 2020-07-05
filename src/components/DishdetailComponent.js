@@ -173,3 +173,25 @@ export class CommentForm extends Component {
                       />
                     </Col>
                   </Row>
+
+                  <Row className="form-group">
+                    <Label htmlFor="feedback" md={12}>
+                      Your feedback
+                    </Label>
+                    <Col md={12}>
+                      <Control.textarea
+                        model=".message"
+                        id="message"
+                        name="message"
+                        rows="6"
+                        className="form-control"
+                        validators={{ required }}
+                      />
+                      <Errors
+                        className="text-danger"
+                        model=".message"
+                        show="touched"
+                        messages={{ required: "Required" }}
+                      />
+                    </Col>
+                  </Row>
