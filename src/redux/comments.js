@@ -1,5 +1,5 @@
 import { COMMENTS } from "../shared/comment";
-import { actionTypes } from "react-redux-form";
+import * as actionTypes from './ActionTypes';
 
 
 export const Comments = (state = COMMENTS, action) => {
@@ -8,6 +8,7 @@ export const Comments = (state = COMMENTS, action) => {
             var comment = action.payload;
             comment.id = state.length;
             comment.date = new Date().toISOString();
+            console.log("Comment: ", comment);
             return state.concat(comment);
         default:
             return state;
