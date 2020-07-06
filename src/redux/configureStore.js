@@ -6,11 +6,11 @@ import { Leaders } from './leaders';
 
 export const ConfigureStore = () => {
     const store = createStore(
-        combineReducer({
+        combineReducers({
             dishes: Dishes,
             comments: Comments,
             promotions: Promotions,
-            Leaders: Leaders
+            leaders: Leaders
         })
     );
     return store;
