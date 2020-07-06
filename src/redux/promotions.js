@@ -1,6 +1,6 @@
 import { PROMOTIONS } from "../shared/promotion";
 
-export const promotion = (state = PROMOTIONS, action) => {
+export const Promotions = (state = PROMOTIONS, action) => {
     switch(action.type){
         default:
             return state;
