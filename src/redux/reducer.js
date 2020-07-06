@@ -1,4 +1,3 @@
-import { DISHES } from "../shared/dish";
 import { COMMENTS } from "../shared/comment";
 import { LEADERS } from "../shared/leader";
 import { PROMOTIONS } from "../shared/promotion";
