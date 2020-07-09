@@ -41,3 +41,8 @@ export const fetchComments = () => (dispatch) => {
     .then(response => response.json())
     .then(comments => dispatch(addComments(comments)));
 };
+
+export const commentsFailed = (errmess) => ({
+    type: ActionTypes.COMMENTS_FAILED,
+    payload: errmess
+});
