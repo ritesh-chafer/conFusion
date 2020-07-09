@@ -14,7 +14,7 @@ import { addComment, fetchDishes } from '../redux/ActionCreators';
 
 import { actions } from 'react-redux-form';
 
-import { addComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
+import { fetchComments, fetchPromos } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state  => {
@@ -72,7 +72,7 @@ class Main extends Component {
           }
           isLoading = {this.props.dishes.isLoading}
           errMess = {this.props.dishes.errMess}
-          comments={this.props.comments.filter(
+          comments={this.props.comments.comments.filter(
             (comment) => comment.dishId === parseInt(match.params.dishId, 10)
           )}
           addComment = {this.props.addComment}
