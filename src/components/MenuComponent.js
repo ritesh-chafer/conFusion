@@ -10,30 +10,11 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-
 import { Loading } from './LoadingComponent';
-
 import { baseUrl } from '../shared/baseUrl';
 
 
 function RenderMenuItem({ dish, onClick }) {
-  // renderDish(dish) {
-  //     if (dish != null)
-  //         return(
-  //             <Card>
-  //                 <CardImg top src={dish.image} alt={dish.name} />
-  //                 <CardBody>
-  //                   <CardTitle>{dish.name}</CardTitle>
-  //                   <CardText>{dish.description}</CardText>
-  //                 </CardBody>
-  //             </Card>
-  //         );
-  //     else
-  //         return(
-  //             <div></div>
-  //         );
-  // }
-
   return (
     <Card>
       <Link to={`/menu/${dish.id}`}>

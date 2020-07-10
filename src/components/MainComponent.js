@@ -10,12 +10,9 @@ import About from "./AboutComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 
-import { addComment, fetchDishes } from '../redux/ActionCreators';
+import { addComment, fetchDishes, fetchComments, fetchPromos  } from '../redux/ActionCreators';
 
 import { actions } from 'react-redux-form';
-
-import { fetchComments, fetchPromos } from '../redux/ActionCreators';
-
 
 const mapStateToProps = state  => {
     return{
