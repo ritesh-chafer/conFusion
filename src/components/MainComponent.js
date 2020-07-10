@@ -14,6 +14,8 @@ import { addComment, fetchDishes, fetchComments, fetchPromos  } from '../redux/A
 
 import { actions } from 'react-redux-form';
 
+import { postComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
+
 const mapStateToProps = state  => {
     return{
       dishes: state.dishes,
