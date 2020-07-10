@@ -55,7 +55,7 @@ function RenderComments({ comments, postComment, dishId}) {
             );
           })}
         </ul>
-        <CommentForm dishId={dishId} postComment ={addComment}
+        <CommentForm dishId={dishId} postComment ={postComment}
         />
       </div>
     );
