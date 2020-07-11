@@ -78,6 +78,7 @@ class Main extends Component {
     return (
       <div>
         <Header />
+        <TransitionGroup>
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route exact path="/menu" component={() => <Menu dishes={this.props.dishes} />} />
@@ -86,6 +87,7 @@ class Main extends Component {
           <Route exact path="/aboutus" component={() => <About leaders={this.props.leaders} />} />
           <Redirect to="/home" />
         </Switch>
+        </TransitionGroup>
         <Footer />
       </div>
     );
