@@ -80,18 +80,10 @@ class Main extends Component {
         <Header />
         <Switch>
           <Route path="/home" component={HomePage} />
-          <Route
-            exact
-            path="/menu"
-            component={() => <Menu dishes={this.props.dishes} />}
-          />
+          <Route exact path="/menu" component={() => <Menu dishes={this.props.dishes} />} />
           <Route exaxt path="/menu/:dishId" component={DishWithId} />
           <Route exact path='/contactus' component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
-          <Route
-            exact
-            path="/aboutus"
-            component={() => <About leaders={this.props.leaders} />}
-          />
+          <Route exact path="/aboutus" component={() => <About leaders={this.props.leaders} />} />
           <Redirect to="/home" />
         </Switch>
         <Footer />
